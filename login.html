@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Connexion</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <style>
+        body {
+            font-family: "Roboto";
+            background: linear-gradient(120deg, rgb(100, 57, 134), rgb(152, 174, 213));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #connexion-form {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+
+        #connexion-form h2 {
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            color: #333;
+            font-size: 23px;
+            text-transform: uppercase;
+            margin: 0 0 20px;
+        }
+
+        #connexion-form label {
+            display: block;
+            margin: 10px 0;
+            font-weight: 600;
+            color: #555;
+        }
+
+        #connexion-form input {
+            width: 80%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #connexion-form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        #connexion-form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="connexion-form">
+            <h2>Connexion</h2>
+            <label for="nom-utilisateur">Nom d'utilisateur:</label>
+            <input type="text" id="nom-utilisateur" required>
+            <label for="mot-de-passe">Mot de passe:</label>
+            <input type="password" id="mot-de-passe" required>
+            <button type="submit">Se connecter</button>
+        </form>
+    </div>
+
+
+    <script>
+       document.addEventListener("DOMContentLoaded", function() {
+    const formulaireConnexion = document.getElementById("connexion-form");
+
+    formulaireConnexion.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const nomUtilisateurSaisi = document.getElementById("nom-utilisateur").value;
+        const motDePasseSaisi = document.getElementById("mot-de-passe").value;
+
+        // Récupérez les données du stockage local
+        const nomUtilisateurEnregistre = localStorage.getItem("nomUtilisateur");
+        const motDePasseEnregistre = localStorage.getItem("motDePasse");
+
+        if (nomUtilisateurSaisi === nomUtilisateurEnregistre && motDePasseSaisi === motDePasseEnregistre) {
+            // Les informations de connexion sont correctes
+            alert("Connexion réussie !");
+            // Redirigez l'utilisateur vers la page d'accueil.
+            window.location.href = "accueil.html";
+        } else {
+            // Les informations de connexion sont incorrectes
+            alert("Nom d'utilisateur ou mot de passe incorrect(s).");
+        }
+    });
+});
+
+    </script>
+</body>
+</html>

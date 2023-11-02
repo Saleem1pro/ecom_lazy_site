@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Couleur de fond agréable */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    
+}
+
+.card_container {
+    background-color: #fff; /* Couleur de fond de la zone de paiement */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+}
+
+label {
+    font-weight: bold;
+    color: #333; /* Couleur du texte */
+}
+
+.card_field {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 5px 0;
+}
+
+.btn {
+    background-color: #0070ba; /* Couleur de fond du bouton */
+    color: #fff; /* Couleur du texte du bouton */
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #005a9e; /* Couleur de fond au survol du bouton */
+}
+
+#paypal-button-container {
+    text-align: center;
+}
+
+/* Style pour le montant à payer */
+#total-amount {
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Ajout de styles pour le bouton "Pay" */
+#submit {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#submit:hover {
+    background-color: #45a049;
+}
+.success-notification {
+    background-color: #4CAF50; /* Couleur verte */
+    color: #fff; /* Texte blanc */
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    top: 10px; /* Position en haut */
+    left: 50%; /* Centre horizontalement */
+    transform: translateX(-50%);
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+}
